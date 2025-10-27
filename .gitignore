@@ -1,7 +1,15 @@
 # Directories
 .vs/
-/bin/
-bin-int/
+.vscode/
+build/
+.idea/
+
+#Cmake
+CMakeFiles/
+CMakeCache.txt
+cmake_install.cmake
+CMakeUserPresets.json
 
 # Files
 *.user
+.DS_Store
