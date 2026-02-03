@@ -226,6 +226,6 @@ This CMake project works with:
 - **Eclipse CDT**
 - **Xcode** (generate with `cmake -G Xcode ..`)
 
-## Original Premake Build
+## Premake Removed
 
-The original Premake build files are still in the repository (premake5.lua) but are no longer maintained. Use CMake for all new development.
+All Premake build files have been removed from the project. The project now uses CMake exclusively for all platforms.

@@ -103,7 +103,14 @@ Select in CLion: **File → Settings → Build, Execution, Deployment → CMake*
 
 ## What About Premake?
 
-The original `premake5.lua` files are still in the repository but are no longer maintained. All new development should use CMake.
+All Premake-related files have been removed from the project:
+- ❌ `premake5.lua` files (root and Glad)
+- ❌ `GenerateProjects.bat`
+- ❌ Visual Studio solution files (`.sln`)
+- ❌ Visual Studio project files (`.vcxproj`)
+- ❌ Premake binaries (`vendor/bin/premake/`)
+
+The project is now **CMake-only**. Premake files in submodules (GLFW, ImGui) remain as they're part of external repositories.
 
 ## Testing the Build
 
