@@ -23,12 +23,6 @@ git checkout cursor/premake-to-cmake-migration-73a6
 git submodule update --init --recursive
 ```
 
-**If imgui folder is missing** (check with `git submodule status`), run:
-
-```bash
-./scripts/fix-imgui-submodule.sh
-```
-
 ### 4. Apply ImGui Bug Fix
 
 **This step is critical!** Run the setup script to fix a compilation bug in TheCherno's ImGui fork:
