@@ -27,16 +27,14 @@ for (int i = 0; i < DC.Layouts.Data.Size; i++)
     ImGuiLayout* layout = (ImGuiLayout*)DC.Layouts.Data[i].val_p;
     
 // CORRECT:
-for (int i = 0; i < window->DC.Layouts.Data.Size; i++)
-{
-    ImGuiLayout* layout = (ImGuiLayout*)window->DC.Layouts.Data[i].val_p;
+Remove for. It does nothing, just gets a pointer and deletes right after.
 ```
 
 **This fix is applied directly in the submodule at `../imgui/imgui.cpp`.**
 
 ### For New Contributors
 
-When you clone the repository and run `git submodule update --init --recursive`, the imgui submodule will be checked out at the original commit. **The bug fix must be reapplied manually:**
+When you clone the repository and run `git submodule update --init --recursive`, the imgui submodule will be checked out at the original commit. **The bug fix must be reapplied manually or reloading CMake. In case reloading CMake didn't work delete file `Kairon/vendor/imgui_cmake/imgui_dc_fix.hash` and reload CMake again:**
 
 ```bash
 cd Kairon/vendor/imgui
