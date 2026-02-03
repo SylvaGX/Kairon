@@ -66,6 +66,25 @@ cmake --build . -j$(sysctl -n hw.ncpu)
 
 ## Troubleshooting
 
+**See `TROUBLESHOOTING.md` for comprehensive troubleshooting steps.**
+
+### ImGui folder is empty after submodule init
+
+Try these steps in order:
+
+```bash
+# 1. Force sync and update
+git submodule sync --recursive
+git submodule update --init --force --recursive
+
+# 2. If still empty, manually clone
+rm -rf Kairon/vendor/imgui
+git clone https://github.com/TheCherno/imgui.git Kairon/vendor/imgui
+cd Kairon/vendor/imgui
+git checkout 781a4ffc674d98dfd2b4d42747e1cd27887fac36
+cd ../../..
+```
+
 ### Build fails with "DC was not declared in this scope"
 
 The ImGui bug fix wasn't applied. Run:
