@@ -58,8 +58,8 @@ add_subdirectory(Kairon/vendor/spdlog)
 # Glad
 add_subdirectory(Kairon/vendor/Glad)
 
-# ImGui
-add_subdirectory(Kairon/vendor/imgui)
+# ImGui (using wrapper CMakeLists to avoid modifying submodule)
+add_subdirectory(Kairon/vendor/imgui_cmake)
 
 # Kairon Engine
 add_subdirectory(Kairon)

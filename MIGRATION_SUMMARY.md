@@ -38,7 +38,8 @@ Your Kairon project has been successfully migrated from Premake to CMake, enabli
 
 ### 4. ImGui Submodule Fix
 - Fixed bug in TheCherno's ImGui fork where `DC` should be `window->DC`
-- Added CMakeLists.txt to build ImGui as a static library
+- Created `Kairon/vendor/imgui_cmake/` directory with CMakeLists.txt to build ImGui
+- **Note**: The bug fix is applied locally in the imgui submodule and must be reapplied after `git submodule update` (see CMAKE_BUILD.md)
 
 ### 5. Project Restructuring
 - Renamed `SandBox/` to `Sandbox/` for consistency

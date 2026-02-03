@@ -46,6 +46,28 @@ If you haven't already initialized the git submodules:
 git submodule update --init --recursive
 ```
 
+#### Important: Apply ImGui Bug Fix
+
+TheCherno's ImGui fork has a compilation bug that must be fixed. After initializing submodules, run the setup script:
+
+**Linux/macOS:**
+```bash
+./scripts/setup-imgui.sh
+```
+
+**Windows:**
+```batch
+scripts\setup-imgui.bat
+```
+
+**Manual Fix (Alternative):**
+
+If the script doesn't work, manually edit `Kairon/vendor/imgui/imgui.cpp` at lines 3839-3841:
+- Change `DC.Layouts.Data.Size` to `window->DC.Layouts.Data.Size`  
+- Change `DC.Layouts.Data[i].val_p` to `window->DC.Layouts.Data[i].val_p`
+
+See `Kairon/vendor/imgui_cmake/README.md` for more details.
+
 ### 2. Configure with CMake
 
 Create a build directory and configure:
