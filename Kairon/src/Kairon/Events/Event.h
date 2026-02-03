@@ -27,10 +27,8 @@ namespace Kairon {
 		EventCategoryMouseButton	= BIT(4)
 	};
 
-	// ## concatena o type aos ::
-	// para ficar EventType::WindowClose e nao EventType:: WindowClose
 	// Using # causes the first argument after the # to be returned as a string in quotes
-	#define EVENT_CLASS_TYPE(type) static EventType GetStaticType(){return EventType::##type;}\
+	#define EVENT_CLASS_TYPE(type) static EventType GetStaticType(){return EventType::type;}\
 									virtual EventType GetEventType() const override {return GetStaticType();}\
 									virtual const char* GetName() const override {return #type;}
 

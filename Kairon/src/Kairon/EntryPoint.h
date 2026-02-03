@@ -1,7 +1,5 @@
 #pragma once
 
-#ifdef KR_PLATFORM_WINDOWS
-
 extern Kairon::Application* Kairon::createApplication();
 
 int main(int argc, char** argv) {
@@ -15,6 +13,5 @@ int main(int argc, char** argv) {
 	app->Run();
 	delete app;
 
+	return 0;
 }
-
-#endif // KR_PALTFORM_WINDOWS
