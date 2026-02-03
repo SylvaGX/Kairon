@@ -12,7 +12,7 @@ public:
 			KR_TRACE("Tab key is pressed (poll)!");
 	}
 
-	virtual void OnImGuiRender() override {
+	void OnImGuiRender() override {
 		ImGui::Begin("Test");
 		ImGui::Text("Hello World");
 		ImGui::End();

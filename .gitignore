@@ -3,5 +3,20 @@
 /bin/
 bin-int/
 
+# CMake
+build/
+build-*/
+cmake-build-*/
+CMakeFiles/
+CMakeCache.txt
+cmake_install.cmake
+compile_commands.json
+CTestTestfile.cmake
+*.hash
+_deps/
+
+# CLion
+.idea/
+
 # Files
 *.user
