@@ -1,0 +1,113 @@
+# Quick Start Guide
+
+## For First-Time Setup (macOS)
+
+Follow these steps to get the project building on your Mac:
+
+### 1. Clone the Repository
+
+```bash
+git clone https://github.com/SylvaGX/Kairon.git
+cd Kairon
+```
+
+### 2. Checkout the CMake Branch
+
+```bash
+git checkout cursor/premake-to-cmake-migration-73a6
+```
+
+### 3. Initialize Submodules
+
+```bash
+git submodule update --init --recursive
+```
+
+### 4. Apply ImGui Bug Fix
+
+**This step is critical!** Run the setup script to fix a compilation bug in TheCherno's ImGui fork:
+
+```bash
+./scripts/setup-imgui.sh
+```
+
+You should see: `✓ ImGui bug fix applied successfully!`
+
+### 5. Install Dependencies (macOS)
+
+Make sure you have Xcode Command Line Tools:
+
+```bash
+xcode-select --install
+```
+
+### 6. Build the Project
+
+```bash
+mkdir build
+cd build
+cmake ..
+cmake --build . -j$(sysctl -n hw.ncpu)
+```
+
+### 7. Run the Sandbox
+
+```bash
+./bin/Sandbox
+```
+
+## For CLion Users
+
+1. **Open CLion**
+2. **File → Open** and select the Kairon project directory
+3. CLion will automatically detect CMake and start configuring
+4. Select **Sandbox** from the run configurations dropdown (top-right)
+5. Click the green play button (▶️) to run
+
+## Troubleshooting
+
+### Build fails with "DC was not declared in this scope"
+
+The ImGui bug fix wasn't applied. Run:
+
+```bash
+./scripts/setup-imgui.sh
+```
+
+### CMake can't find OpenGL
+
+Make sure you have Xcode Command Line Tools installed:
+
+```bash
+xcode-select --install
+```
+
+### Submodule initialization failed
+
+If you see errors about commit `6c4a8f49ece98969bb7946587a2bed6a609e9bfe` not being found, that's expected. That was a local commit that has been removed. Just make sure you're on the latest commit of the `cursor/premake-to-cmake-migration-73a6` branch:
+
+```bash
+git pull origin cursor/premake-to-cmake-migration-73a6
+git submodule update --init --recursive
+./scripts/setup-imgui.sh
+```
+
+## What Was Changed?
+
+The project has been migrated from Premake to CMake, enabling:
+- ✅ Cross-platform development (Windows, macOS, Linux)
+- ✅ CLion IDE support
+- ✅ Better dependency management
+- ✅ Standard build configurations (Debug, Release, etc.)
+
+See `MIGRATION_SUMMARY.md` for full details.
+
+## Need Help?
+
+- See `CMAKE_BUILD.md` for detailed build instructions
+- See `Kairon/vendor/imgui_cmake/README.md` for ImGui setup details
+- Check GitHub issues for known problems
+
+---
+
+**Happy coding on macOS! 🚀**
