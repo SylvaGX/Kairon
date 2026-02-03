@@ -64,11 +64,17 @@ cmake --build . -j$(sysctl -n hw.ncpu)
 
 ## For CLion Users
 
+**IMPORTANT:** If using CMake 3.27+, you need to add a CMake option first!
+
 1. **Open CLion**
-2. **File → Open** and select the Kairon project directory
-3. CLion will automatically detect CMake and start configuring
-4. Select **Sandbox** from the run configurations dropdown (top-right)
-5. Click the green play button (▶️) to run
+2. **Settings** → **Build, Execution, Deployment** → **CMake**
+3. In **CMake options** field, add: `-DCMAKE_POLICY_VERSION_MINIMUM=3.5`
+4. **File → Open** and select the Kairon project directory
+5. CLion will automatically detect CMake and start configuring
+6. Select **Sandbox** from the run configurations dropdown (top-right)
+7. Click the green play button (▶️) to run
+
+**See `CMAKE_CLION.md` for detailed CLion setup instructions.**
 
 ## Troubleshooting
 
