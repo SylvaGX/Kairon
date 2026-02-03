@@ -33,7 +33,6 @@ namespace Kairon {
 		m_Data.Height = props.Height;
 
 		KR_CORE_INFO("Creating window {0} ({1}, {2})", props.Title, props.Width, props.Height);
-		
 
 		if (!s_GLFWInitialized) {
 			// TODO: glfwTerminate on system shutdown

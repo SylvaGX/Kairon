@@ -1,7 +1,7 @@
 #pragma once
 
 // Platform detection
-#if defined(KR_PLATFORM_WINDOWS)
+#ifdef KR_PLATFORM_WINDOWS
 	#if KR_DYNAMIC_LINK
 		#ifdef KR_BUILD_DLL
 			#define KAIRON_API __declspec(dllexport)
