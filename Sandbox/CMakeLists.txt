@@ -11,29 +11,29 @@ add_executable(Sandbox ${SANDBOX_SOURCES})
 
 # Include directories
 target_include_directories(Sandbox PRIVATE
-    ${CMAKE_SOURCE_DIR}/Kairon/vendor/spdlog/include
-    ${CMAKE_SOURCE_DIR}/Kairon/src
-    ${CMAKE_SOURCE_DIR}/Kairon/vendor
-    ${CMAKE_SOURCE_DIR}/Kairon/vendor/glm
+    ${CMAKE_SOURCE_DIR}/DotEngine/vendor/spdlog/include
+    ${CMAKE_SOURCE_DIR}/DotEngine/src
+    ${CMAKE_SOURCE_DIR}/DotEngine/vendor
+    ${CMAKE_SOURCE_DIR}/DotEngine/vendor/glm
 )
 
-# Link Kairon engine
+# Link Dot engine
 target_link_libraries(Sandbox PRIVATE
-    Kairon
+        DotEngine
 )
 
 # Platform-specific definitions
 if(WIN32)
     target_compile_definitions(Sandbox PRIVATE
-        KR_PLATFORM_WINDOWS
+        DOTENGINE_PLATFORM_WINDOWS
     )
 elseif(APPLE)
     target_compile_definitions(Sandbox PRIVATE
-        KR_PLATFORM_MACOS
+        DOTENGINE_PLATFORM_MACOS
     )
 elseif(UNIX)
     target_compile_definitions(Sandbox PRIVATE
-        KR_PLATFORM_LINUX
+        DOTENGINE_PLATFORM_LINUX
     )
 endif()
 

@@ -12,8 +12,8 @@ Follow these steps to get the project building on your PC:
 ### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/SylvaGX/Dot.git
-cd Dot
+git clone https://github.com/SylvaGX/Dot-Engine.git
+cd Dot-Engine
 ```
 
 ### 2. Checkout the CMake Branch
@@ -68,7 +68,7 @@ cmake --build . -j$(sysctl -n hw.ncpu)
 1. **Open CLion**
 2. **Settings** → **Build, Execution, Deployment** → **CMake**
 3. In **CMake options** field, add: `-DCMAKE_POLICY_VERSION_MINIMUM=3.5`
-4. **File → Open** and select the Dot project directory
+4. **File → Open** and select the DotEngine project directory
 5. CLion will automatically detect CMake and start configuring
 6. Select **Sandbox** from the run configurations dropdown (top-right)
 7. Click the green play button (▶️) to run
@@ -80,7 +80,7 @@ cmake --build . -j$(sysctl -n hw.ncpu)
 ##### Step 1: Open Project
 
 1. **File** → **Open**
-2. Navigate to the Dot project directory
+2. Navigate to the DotEngine project directory
 3. Select the root folder (where the main `CMakeLists.txt` is)
 4. Click **Open**
 
@@ -124,7 +124,7 @@ Before building in CLion, make sure you've completed:
 - [ ] Cloned the repository
 - [ ] Checked out `main` branch
 - [ ] Initialized submodules: `git submodule update --init --recursive`
-- [ ] Applied imgui bug fix: Can do manually by running `./scripts/setup-imgui.sh` or reloading CMake. In case reloading CMake didn't work delete file `Dot/vendor/imgui_cmake/imgui_dc_fix.hash` and reload CMake again
+- [ ] Applied imgui bug fix: Can do manually by running `./scripts/setup-imgui.sh` or reloading CMake. In case reloading CMake didn't work delete file `DotEngine/vendor/imgui_cmake/imgui_dc_fix.hash` and reload CMake again
 - [ ] Added CMake option in CLion: `-DCMAKE_POLICY_VERSION_MINIMUM=3.5`
 - [ ] Added CMake option in CLion if conan needed: - `-DCMAKE_PROJECT_TOP_LEVEL_INCLUDES="conan_provider.cmake"`
 
@@ -159,7 +159,7 @@ Run manually:
 ```bash
 ./scripts/setup-imgui.sh
 ```
-**or reload CMake. In case reloading CMake didn't work delete file `Dot/vendor/imgui_cmake/imgui_dc_fix.hash` and reload CMake again.**
+**or reload CMake. In case reloading CMake didn't work delete file `DotEngine/vendor/imgui_cmake/imgui_dc_fix.hash` and reload CMake again.**
 
 Then reload CMake project in CLion (**Tools** → **CMake** → **Reload CMake Project**)
 

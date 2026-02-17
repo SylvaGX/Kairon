@@ -3,7 +3,7 @@ REM Script to apply the necessary bug fix to TheCherno's ImGui fork (Windows)
 
 set SCRIPT_DIR=%~dp0
 set PROJECT_ROOT=%SCRIPT_DIR%..
-set IMGUI_DIR=%PROJECT_ROOT%\Kairon\vendor\imgui
+set IMGUI_DIR=%PROJECT_ROOT%\DotEngine\vendor\imgui
 set IMGUI_CPP=%IMGUI_DIR%\imgui.cpp
 
 echo Applying ImGui bug fix...

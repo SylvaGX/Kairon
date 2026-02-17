@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.16)
-project(Kairon VERSION 1.0.0 LANGUAGES CXX C)
+project(DotEngine VERSION 1.0.0 LANGUAGES CXX C)
 
 # Set C++ standard
 set(CMAKE_CXX_STANDARD 20)
@@ -21,22 +21,22 @@ endif()
 
 # Platform detection
 if(WIN32)
-    add_compile_definitions(KR_PLATFORM_WINDOWS)
+    add_compile_definitions(DOTENGINE_PLATFORM_WINDOWS)
 elseif(APPLE)
-    add_compile_definitions(KR_PLATFORM_MACOS)
+    add_compile_definitions(DOTENGINE_PLATFORM_MACOS)
 elseif(UNIX)
-    add_compile_definitions(KR_PLATFORM_LINUX)
+    add_compile_definitions(DOTENGINE_PLATFORM_LINUX)
 endif()
 
 # Configuration-specific definitions
 if(CMAKE_BUILD_TYPE STREQUAL "Debug")
-    add_compile_definitions(KR_DEBUG)
+    add_compile_definitions(DOTENGINE_DEBUG)
 elseif(CMAKE_BUILD_TYPE STREQUAL "Release")
-    add_compile_definitions(KR_RELEASE)
+    add_compile_definitions(DOTENGINE_RELEASE)
 elseif(CMAKE_BUILD_TYPE STREQUAL "RelWithDebInfo")
-    add_compile_definitions(KR_RELEASE)
+    add_compile_definitions(DOTENGINE_RELEASE)
 elseif(CMAKE_BUILD_TYPE STREQUAL "MinSizeRel")
-    add_compile_definitions(KR_DIST)
+    add_compile_definitions(DOTENGINE_DIST)
 endif()
 
 # Vendor dependencies
@@ -44,25 +44,25 @@ set(GLFW_BUILD_DOCS OFF CACHE BOOL "" FORCE)
 set(GLFW_BUILD_TESTS OFF CACHE BOOL "" FORCE)
 set(GLFW_BUILD_EXAMPLES OFF CACHE BOOL "" FORCE)
 set(GLFW_INSTALL OFF CACHE BOOL "" FORCE)
-add_subdirectory(Kairon/vendor/GLFW)
+add_subdirectory(DotEngine/vendor/GLFW)
 
 # GLM - header only, no need to build
-add_subdirectory(Kairon/vendor/glm)
+add_subdirectory(DotEngine/vendor/glm)
 
 # spdlog
 set(SPDLOG_BUILD_EXAMPLES OFF CACHE BOOL "" FORCE)
 set(SPDLOG_BUILD_TESTING OFF CACHE BOOL "" FORCE)
 set(SPDLOG_INSTALL OFF CACHE BOOL "" FORCE)
-add_subdirectory(Kairon/vendor/spdlog)
+add_subdirectory(DotEngine/vendor/spdlog)
 
 # Glad
-add_subdirectory(Kairon/vendor/Glad)
+add_subdirectory(DotEngine/vendor/Glad)
 
 # ImGui (using wrapper CMakeLists to avoid modifying submodule)
-add_subdirectory(Kairon/vendor/imgui_cmake)
+add_subdirectory(DotEngine/vendor/imgui_cmake)
 
-# Kairon Engine
-add_subdirectory(Kairon)
+# Dot Engine
+add_subdirectory(DotEngine)
 
 # Sandbox Application
 add_subdirectory(Sandbox)
